@@ -63,6 +63,7 @@ class Subscriber(models.Model, SubscriberModelMixin):
         django_settings.AUTH_USER_MODEL,
         related_name='%(app_label)s_%(class)s',
         null=True,
+        on_delete=models.SET_NULL,
     )
 
     hmac_secret = models.TextField(
